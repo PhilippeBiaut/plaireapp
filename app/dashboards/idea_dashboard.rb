@@ -8,6 +8,7 @@ class IdeaDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    comments: Field::HasMany,
     id: Field::Number,
     name: Field::String,
     description: Field::Text,
@@ -22,15 +23,16 @@ class IdeaDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
+    comments
     id
     name
     description
-    picture
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
+    comments
     id
     name
     description
@@ -43,6 +45,7 @@ class IdeaDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+    comments
     name
     description
     picture

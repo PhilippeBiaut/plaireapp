@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     namespace :admin do
     # Add dashboard for your models here
     resources :ideas
+    resources :comments
 
     	root to: "ideas#index" # <--- Root route
   	end
